@@ -5,13 +5,25 @@ from math import sqrt
 app = Flask(__name__)
 
 @app.route('/')
-def nao_entre_em_panico():
-
-
-    primos = "Tudo vai dar certo caros alunos!"
-
-
-    return primos
+def primos():
+    ate=100
+    a=1
+    b=1
+    n=3
+    primo = "2,"
+    
+    while b < ate:
+        num_primo = 1
+        for i in range(2, n):
+            if n % i == 0:
+                num_primo = 0
+            break
+        if (num_primo):
+            primo = primo + str(n) +","
+            b += 1
+        n += 1
+        return primos
+        
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
