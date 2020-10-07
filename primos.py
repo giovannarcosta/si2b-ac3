@@ -5,12 +5,22 @@ from math import sqrt
 app = Flask(__name__)
 
 @app.route('/')
-def nao_entre_em_panico():
-
-
-    primos = "Tudo vai dar certo caros alunos!"
-
-
+def primos():
+    maxim=100
+    a=1
+    b=1
+    num=3
+    primos='2,'
+    while b<maxim:
+        num_primo=1
+        for i in range(2, num):
+            if num % i == 0:
+                num_primo = 0
+                break
+        if (num_primo):
+            primos = primos + str(num) + ','
+            b += 1
+        num+=1
     return primos
 
 if __name__ == "__main__":
